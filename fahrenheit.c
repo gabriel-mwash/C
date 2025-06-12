@@ -1,15 +1,27 @@
 #include <stdio.h>
 
+#define LOWER 0     /* lower limit of table */
+#define UPPER 300  /* upper limit */
+#define STEP 20   /* step size */
+
+
+int main() {
+  int c;
+  while (c = getchar() != EOF) {
+    putchar(c);
+  }
+}
+
 /* print Fahrenheit-celsius table
   for fahr = 0, 20, ...  300 */ 
-
+/*
 int main() {
   float fahr, celsius;
   float lower, upper, step;
 
-  lower = 0;  /* lower limit of temp scale */
-  upper = 300; /* upper limit */
-  step = 20; /* step size */ 
+  lower = 0;
+  upper = 300;
+  step = 20; 
 
   fahr = lower;
   printf("fahrenheit to degree celsius\n");
@@ -32,4 +44,6 @@ int main() {
     celsius = celsius + step;
   }
 }
+*/
+
 
