@@ -4,17 +4,6 @@
 #define UPPER 300  /* upper limit */
 #define STEP 20   /* step size */
 
-
-int main() {
-  int c;
-  while (c = getchar() != EOF) {
-    putchar(c);
-  }
-}
-
-/* print Fahrenheit-celsius table
-  for fahr = 0, 20, ...  300 */ 
-/*
 int main() {
   float fahr, celsius;
   float lower, upper, step;
@@ -44,6 +33,4 @@ int main() {
     celsius = celsius + step;
   }
 }
-*/
-
 
