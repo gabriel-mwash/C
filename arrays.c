@@ -1,6 +1,7 @@
 #include <stdio.h>
 
 /* count digits, white space, others */
+/*
 int main()
   {
   int c, i, nwhite, nother;
@@ -28,3 +29,32 @@ int main()
   printf(", white space = %d, other = %d\n",
   nwhite, nother);
   }
+  */ 
+
+// an array of type int that stores 5 values 
+
+#include <stdio.h>
+
+int main() {
+  int age[5];
+
+  printf("enter 5 input valuws: ");
+
+  scanf("%d", &age[0]);
+  scanf("%d", &age[1]);
+  scanf("%d", &age[2]);
+  scanf("%d", &age[3]);
+  scanf("%d", &age[4]);
+
+
+  printf("%d ", age[0]);
+  printf("%d ", age[1]);
+  printf("%d ", age[2]);
+  printf("%d ", age[3]);
+  printf("%d ", age[4]);
+
+};
+
+
+
+
