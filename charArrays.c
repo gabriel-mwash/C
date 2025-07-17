@@ -1,8 +1,9 @@
 #include <stdio.h>
 
-#define MAXLINE 1000    /* max input line length */
+#define MAXLINE 6    /* max input line length */
 
 int getLine(char line[], int maxline); 
+int getLineV2(char line[], int maxline);
 void copy(char to[], char from[]);
 
 
@@ -14,7 +15,7 @@ int main() {
   char longest[MAXLINE]; /* longest line saved here */
 
   max = 0;
-  while ((len = getLine(line, MAXLINE)) > 0) {
+  while ((len = getLineV2(line, MAXLINE)) > 0) {
     if (len > max) { 
       max = len;
       copy(longest, line);
@@ -29,16 +30,34 @@ int main() {
 /* getline: read a line into s, return length */
 int getLine(char s[], int lim) {
   int charLine, i;
-  for (i = 0; i < lim - 1 && (charLine = getchar()) != EOF && charLine != '\n'; ++i) {
-    s[i] = charLine;
-  }
-  if (charLine == '\n') {
-    s[i] = charLine;
-    ++i;
+  for (i = 0; i < lim -1 && (charLine = getchar()) != EOF && charLine != '\n'; ++i) {
+    if (charLine == '\n') {
+      s[i] = charLine;
+      ++i;
+    }
   }
   s[i] = '\0';
   return i;
 }
+
+int getLineV2(char s[], int lim) {
+  int charLine, i, j;
+  j = 0;
+  for (i = 0; (charLine = getchar()) != EOF && charLine != '\n'; ++i) {
+    if (i < lim - 2) {
+      s[j] = charLine; /* line still in boundaries */
+      ++j;
+    }
+  }
+  if (charLine == '\n') {
+    s[j] = charLine;
+    ++j;
+    ++i;
+  }
+  s[j] = '\0';
+  return i;
+}
+
 
 /* copy: copy 'from' into 'to', assume to is big enough */
 void copy(char to[], char from[]) {
@@ -49,3 +68,19 @@ void copy(char to[], char from[]) {
   }
 }
 
+/*
+int getLongestLine() {
+  int i, charLine;
+  int len = 0;
+  int maxlen = 0;
+  while ((charLine = getchar()) != EOF ) {
+    for (i = 0; charLine != '\n'; ++i) {
+      len = len + 1;
+    }
+    if (len > maxlen) {
+      putchar(charLine);
+    }
+  }
+}
+
+*/
