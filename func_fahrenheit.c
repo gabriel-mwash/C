@@ -12,7 +12,7 @@ float fahrenheit_to_celsius(float fahr) {
 }
 
 float celsius_to_fahrenheit(float celsius) {
-  float fahr = (celsius * (9.0 / 5.0)) + 32.0;
+  float fahr = (celsius * (9.0 / 5.0)) + CONST;
   return fahr;
 }
 
@@ -31,5 +31,3 @@ int main() {
     celsius += STEP;
   }
 }
-
-
