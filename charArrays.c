@@ -33,7 +33,7 @@ int getLine(char s[], int lim) {
   for (i = 0; i < lim -1 && (charLine = getchar()) != EOF && charLine != '\n'; ++i) {
     if (charLine == '\n') {
       s[i] = charLine;
-      ++i;
+//      ++i;
     }
   }
   s[i] = '\0';
