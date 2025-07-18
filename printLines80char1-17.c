@@ -1,16 +1,32 @@
 #include <stdio.h>
 
-#define ATLEAST 80
+#define MAXLINE 1000   /* max input line length */
+#define MINLINE 80
 
-int getLine(char line[], int atleast);
-void copy(char to[], char from[]);
+int get80Line (char line[], int limit);
+
 
 int main() {
+  int len;
+  char line[MAXLINE];
 
+  while ((len = get80Line(line, MAXLINE)) > 0) {
+    if (len > MINLINE) {
+      printf("%s", line);
+    }
+  }
 }
 
-int getLine(char line[], int atleast) {
-  int charLines, i;
-  for (i = 0; charLines = getchar() != EOF && i >= 
-
+int get80Line(char line[], int lim) {
+  int charLine, i;
+  for (i = 0; (i < lim - 1)  &&
+      ((charLine = getchar()) != EOF) && (charLine != '\n'); ++i) {
+    line[i] = charLine;
+  }
+  if (charLine == '\n') {
+    line[i] = charLine;
+    ++i;
+  }
+  line[i] = '\0';
+  return i;
 }
